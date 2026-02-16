@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Recruiting Solutions Ltd.</title>
+    <link rel="icon" type="image/png" href="fav_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #001F3F;
+            --blue: #007BFF;
+            --blue-hover: #0056b3;
+            --grey-bg: #F5F5F5;
+            --white: #FFFFFF;
+            --text-secondary: #4A5568;
+            --border: #E2E8F0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ── Header ── */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-group img {
+            height: 42px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text .name {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text .tagline {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .nav-cta {
+            background: var(--blue);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--blue-hover);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* ── Sections ── */
+        section {
+            padding: 96px 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+
+        .grey-bg {
+            background: var(--grey-bg);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 120px 24px 96px;
+            background: linear-gradient(168deg, var(--white) 60%, var(--grey-bg) 100%);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 123, 255, 0.08);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blue);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--navy);
+            padding: 14px 28px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: border-color 0.2s, transform 0.1s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-1px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-graphic {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(0,123,255,0.06) 0%, rgba(0,31,63,0.04) 100%);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            padding: 48px;
+        }
+
+        .hero-graphic i {
+            font-size: 64px;
+            color: var(--blue);
+            opacity: 0.7;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .stat-item .label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Trust Bar ── */
+        .trust-bar {
+            padding: 40px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .trust-item i {
+            color: var(--blue);
+            font-size: 18px;
+        }
+
+        /* ── Services Grid ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px;
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 31, 63, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 123, 255, 0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-icon i {
+            font-size: 20px;
+            color: var(--blue);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* ── Requirements ── */
+        .requirements-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .req-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .req-list li {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .req-list .icon-circle {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 123, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .req-list .icon-circle i {
+            font-size: 14px;
+            color: var(--blue);
+        }
+
+        .req-list .req-text strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .req-list .req-text span {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .note-box {
+            background: rgba(0, 123, 255, 0.04);
+            border-left: 3px solid var(--blue);
+            border-radius: 0 8px 8px 0;
+            padding: 24px 28px;
+            margin-top: 32px;
+        }
+
+        .note-box p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* ── Compensation ── */
+        .comp-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .comp-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px;
+            text-align: center;
+        }
+
+        .comp-card .amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--blue);
+            margin: 16px 0 8px;
+        }
+
+        .comp-card .amount-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .comp-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .comp-card i {
+            font-size: 28px;
+            color: var(--blue);
+            opacity: 0.7;
+        }
+
+        /* ── Long-Term ── */
+        .longterm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .longterm-card {
+            padding: 32px;
+            border-radius: 12px;
+            background: var(--white);
+            border: 1px solid var(--border);
+        }
+
+        .longterm-card i {
+            font-size: 24px;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+
+        .longterm-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* ── Process ── */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .step h3 {
+            font-size: 16px;
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+        }
+
+        /* ── Testimonials ── */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .testimonial .stars {
+            color: #F59E0B;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial blockquote {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial .author {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .testimonial .author span {
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .testimonials-note {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* ── Compliance ── */
+        .compliance-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .compliance-inner h2 {
+            margin-bottom: 12px;
+        }
+
+        .compliance-inner > p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .compliance-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .compliance-badge i {
+            font-size: 28px;
+            color: var(--blue);
+        }
+
+        .compliance-badge span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* ── Contact ── */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact-info > p {
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .contact-detail i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 123, 255, 0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .contact-detail .detail-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .contact-detail .detail-value {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .contact-detail a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--grey-bg);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--navy);
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            justify-content: center;
+            padding: 16px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .registration-note {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .registration-note p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 64px 24px 32px;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .name {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--white);
+        }
+
+        .disclaimer {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.7;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-graphic {
+                max-width: 360px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .comp-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .longterm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            section {
+                padding: 64px 20px;
+            }
+
+            .hero {
+                padding: 80px 20px 64px;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+
+            .stat-row {
+                gap: 20px;
+            }
+
+            .stat-item .number {
+                font-size: 22px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-bar .container {
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Header ── -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo-group">
+                <img src="Global_Recruiting_logo_design.png" alt="Global Recruiting Solutions Ltd. Logo">
+                <div class="logo-text">
+                    <span class="name">Global Recruiting Solutions Ltd.</span>
+                    <span class="tagline">Connecting Professionals for Compliant International Business Support</span>
+                </div>
+            </a>
+            <nav id="mainNav">
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact" class="nav-cta">Contact</a>
+            </nav>
+            <button class="mobile-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-globe"></i>&nbsp; Remote Opportunity</span>
+                <h1>Remote Nominee Services Opportunity</h1>
+                <p>We provide compliant nominee director and verification support services to international companies navigating global regulatory requirements. Our platform connects qualified individuals with businesses seeking assistance in jurisdictions where nominee arrangements are legally permitted, such as for privacy and operational efficiency.</p>
+                <p>All services adhere to international standards, including anti-money laundering (AML) regulations and know-your-customer (KYC) protocols. Participants are fully informed of their legal responsibilities as nominee directors, which may include limited administrative duties with no operational control.</p>
+                <p>This is a remote, contract-based opportunity for responsible professionals seeking supplemental income through verified, legal processes.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get Started</a>
+                    <a href="#services" class="btn-outline"><i class="fas fa-arrow-down"></i> Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-graphic">
+                    <i class="fas fa-handshake"></i>
+                    <div class="stat-row">
+                        <div class="stat-item">
+                            <div class="number">30+</div>
+                            <div class="label">Countries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">500+</div>
+                            <div class="label">Contractors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">99%</div>
+                            <div class="label">Compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Trust Bar ── -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-item"><i class="fas fa-shield-halved"></i> AML Compliant</div>
+            <div class="trust-item"><i class="fas fa-user-check"></i> KYC Verified</div>
+            <div class="trust-item"><i class="fas fa-file-contract"></i> Full Contracts Provided</div>
+            <div class="trust-item"><i class="fas fa-lock"></i> Secure Processes</div>
+            <div class="trust-item"><i class="fas fa-building-columns"></i> Registered in Canada</div>
+        </div>
+    </div>
+
+    <!-- ── Services ── -->
+    <section id="services">
+        <div class="container">
+            <h2>What You'll Provide</h2>
+            <p class="section-subtitle">International businesses frequently require nominee support for company formations and verifications in specific countries. As a contractor, you may assist with:</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Nominee Director Services</h3>
+                    <p>Acting as a nominee director for registration purposes, with full disclosure of your limited role and responsibilities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-id-card"></i></div>
+                    <h3>Identity Verification (KYC)</h3>
+                    <p>Providing verified identity documentation for standard know-your-customer checks required during company onboarding.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-folder-open"></i></div>
+                    <h3>Administrative Filings</h3>
+                    <p>Supporting administrative filings for company onboarding processes across various jurisdictions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Remote Compliance Coordination</h3>
+                    <p>Remote coordination for compliance-related tasks, all from the comfort of your own location.</p>
+                </div>
+            </div>
+            <div class="note-box" style="margin-top: 40px;">
+                <p><strong>Important:</strong> All engagements are contract-based, with clear terms outlined in advance. You retain the right to review and sign off on all documents, and we ensure compatibility with your local laws.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Requirements ── -->
+    <section class="grey-bg" id="about">
+        <div class="container">
+            <div class="requirements-layout">
+                <div>
+                    <h2>No Prior Experience Required, But Compliance Matters</h2>
+                    <p class="section-subtitle" style="margin-bottom: 36px;">While no specific corporate experience is needed, you must meet the following criteria:</p>
+                    <ul class="req-list">
+                        <li>
+                            <div class="icon-circle"><i class="fas fa-calendar-check"></i></div>
+                            <div class="req-text">
+                                <strong>Age &amp; Residency</strong>
+                                <span>Be at least 21 years old and a resident of an eligible country</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-circle"><i class="fas fa-passport"></i></div>
+                            <div class="req-text">
+                                <strong>Valid Identification</strong>
+                                <span>Have valid government-issued ID and proof of address</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-circle"><i class="fas fa-scale-balanced"></i></div>
+                            <div class="req-text">
+                                <strong>Legal Awareness</strong>
+                                <span>Understand basic legal obligations (we provide training materials)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-circle"><i class="fas fa-handshake-angle"></i></div>
+                            <div class="req-text">
+                                <strong>Ethical Standards</strong>
+                                <span>Commit to ethical standards and full transparency</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="note-box" style="margin-top: 0;">
+                        <p><strong>Guided Onboarding</strong></p>
+                        <p style="margin-top: 8px;">We guide you through onboarding, including a compliance checklist and legal overview. Our dedicated support team ensures you are fully prepared before any engagement begins.</p>
+                    </div>
+                    <div class="note-box" style="margin-top: 16px;">
+                        <p><strong>Training Materials</strong></p>
+                        <p style="margin-top: 8px;">Comprehensive training documentation is provided to help you understand your role, legal responsibilities, and best practices for nominee services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Compensation ── -->
+    <section>
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+                <h2>Competitive, Performance-Based Pay</h2>
+                <p class="section-subtitle" style="margin: 12px auto 0;">Transparent compensation for verified, completed engagements.</p>
+            </div>
+            <div class="comp-cards">
+                <div class="comp-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <div class="amount">$50–$100</div>
+                    <div class="amount-label">USD per completed engagement</div>
+                    <p>Based on complexity and jurisdiction requirements.</p>
+                </div>
+                <div class="comp-card">
+                    <i class="fas fa-building-columns"></i>
+                    <div class="amount" style="font-size: 24px;">Secure Payments</div>
+                    <div class="amount-label">Bank Transfer or PayPal</div>
+                    <p>Payments processed after verification confirmation via your preferred method.</p>
+                </div>
+                <div class="comp-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <div class="amount" style="font-size: 24px;">Tax Compliant</div>
+                    <div class="amount-label">Your Responsibility</div>
+                    <p>Taxes and reporting are your responsibility; we provide 1099 forms for US residents where applicable.</p>
+                </div>
+            </div>
+            <div class="note-box" style="margin-top: 32px; text-align: center;">
+                <p><strong>Priority Assignments:</strong> Reliable contractors may qualify for repeat engagements and priority assignments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Long-Term Opportunities ── -->
+    <section class="grey-bg">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+                <h2>Building Professional Relationships</h2>
+                <p class="section-subtitle" style="margin: 12px auto 0;">We seek ongoing collaborations with dependable professionals. Successful participants can:</p>
+            </div>
+            <div class="longterm-grid">
+                <div class="longterm-card">
+                    <i class="fas fa-rotate"></i>
+                    <h3>Recurring Contracts</h3>
+                    <p>Access recurring contracts for consistent, predictable income from trusted engagements.</p>
+                </div>
+                <div class="longterm-card">
+                    <i class="fas fa-share-nodes"></i>
+                    <h3>Additional Referrals</h3>
+                    <p>Receive referrals for additional services, expanding your professional portfolio.</p>
+                </div>
+                <div class="longterm-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Referral Program</h3>
+                    <p>Participate in our referral program for bonuses when you recommend qualified professionals.</p>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 14px; margin-top: 32px;">All partnerships are optional and can be terminated at any time.</p>
+        </div>
+    </section>
+
+    <!-- ── Process ── -->
+    <section>
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+                <h2>How It Works</h2>
+                <p class="section-subtitle" style="margin: 12px auto 0;">A clear, structured process from initial contact to payment.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Initial Contact</h3>
+                    <p>Submit your details via our secure form or email.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Eligibility Screening</h3>
+                    <p>We review your background, country of residence, and availability (typically 24&ndash;48 hours).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Detailed Briefing</h3>
+                    <p>Receive a full contract, legal summary, and Q&amp;A session via video call.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Engagement Execution</h3>
+                    <p>Complete tasks with our support team's guidance.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Completion &amp; Payment</h3>
+                    <p>Final review, then prompt payment within 7 business days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Testimonials ── -->
+    <section class="grey-bg">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+                <h2>Insights from Our Contractors</h2>
+                <p class="section-subtitle" style="margin: 12px auto 0;">Hear from professionals who have worked with us.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Clear process from start to finish. The legal briefing helped me understand my role fully."</blockquote>
+                    <div class="author">Daniel <span>&mdash; United Kingdom</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Professional team with quick responses. I've completed several engagements without issues."</blockquote>
+                    <div class="author">Mariam <span>&mdash; UAE</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Reliable and compliant&mdash;payments always on time."</blockquote>
+                    <div class="author">Rashid <span>&mdash; Pakistan</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Thorough explanations made it straightforward. Great for supplemental work."</blockquote>
+                    <div class="author">Angela <span>&mdash; Philippines</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Consistent opportunities for those who deliver quality."</blockquote>
+                    <div class="author">Jonas <span>&mdash; Germany</span></div>
+                </div>
+            </div>
+            <p class="testimonials-note">All testimonials verified and anonymized for privacy.</p>
+        </div>
+    </section>
+
+    <!-- ── Compliance ── -->
+    <section>
+        <div class="container">
+            <div class="compliance-inner">
+                <h2>Your Peace of Mind</h2>
+                <p>We operate in full compliance with international laws. All nominee services are limited to legal uses, such as legitimate business privacy. Participants are protected by indemnity clauses in contracts. If you have concerns, consult your own legal advisor before proceeding.</p>
+                <div class="compliance-badges">
+                    <div class="compliance-badge">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>AML Compliant</span>
+                    </div>
+                    <div class="compliance-badge">
+                        <i class="fas fa-user-shield"></i>
+                        <span>KYC Protocols</span>
+                    </div>
+                    <div class="compliance-badge">
+                        <i class="fas fa-file-shield"></i>
+                        <span>Indemnity Protection</span>
+                    </div>
+                    <div class="compliance-badge">
+                        <i class="fas fa-scale-balanced"></i>
+                        <span>Legal Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section class="grey-bg" id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h2>Get Started Today</h2>
+                    <p>Submit your details and our team responds within 1 business day to qualified applicants.</p>
+
+                    <div class="contact-detail">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <div class="detail-label">Website</div>
+                            <div class="detail-value"><a href="#">www.globalrecruitingsolutions.com</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <div class="detail-label">Email</div>
+                            <div class="detail-value"><a href="mailto:info@globalrecruitingsolutions.com">info@globalrecruitingsolutions.com</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <div class="detail-label">Phone (WhatsApp-enabled)</div>
+                            <div class="detail-value">+1 825 604 5309</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <div class="detail-label">Address</div>
+                            <div class="detail-value">123 Business Plaza, Suite 400<br>Calgary, AB T2P 1J9, Canada</div>
+                        </div>
+                    </div>
+
+                    <div class="registration-note">
+                        <p><strong>Company Registration:</strong> Incorporated in Canada (Reg. No. 123456789)</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Inquire Now</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. Our team will respond within 1 business day.');">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country of Residence</label>
+                            <input type="text" id="country" placeholder="e.g. United Kingdom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="availability">Availability</label>
+                            <select id="availability" required>
+                                <option value="" disabled selected>Select your availability</option>
+                                <option>Immediately</option>
+                                <option>Within 1 week</option>
+                                <option>Within 2 weeks</option>
+                                <option>Within 1 month</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Brief Note</label>
+                            <textarea id="message" placeholder="Interested in nominee opportunities"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="name">Global Recruiting Solutions Ltd.</div>
+                <p>Connecting professionals for compliant international business support. All services adhere to international standards and regulatory requirements.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:info@globalrecruitingsolutions.com">info@globalrecruitingsolutions.com</a>
+                <a href="#">+1 825 604 5309</a>
+                <a href="#">Calgary, AB, Canada</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Recruiting Solutions Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <strong>Legal Disclaimer:</strong> Services are not available in all jurisdictions; eligibility varies by local laws. All nominee services are provided in compliance with applicable regulations. Participants are encouraged to consult with independent legal advisors before engaging in any services. Company Registration: Incorporated in Canada (Reg. No. 123456789).
+        </div>
+    </footer>
+
+</body>
+</html>
